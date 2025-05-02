@@ -11,7 +11,9 @@ state(по умолчанию 'EXECUTED') и возвращает новый с�
     return finish_list_dict
 
 
-
+def sort_by_date(list_of_dict:list, sort_p = True) -> list:
+    """ Функция, которая принимает список словарей и необязательный параметр, задающий порядок сортировки """
+    return sorted(list_of_dict, key=lambda dict: dict['date'], reverse= sort_p)
 
 
 if __name__ == '__main__':
@@ -20,4 +22,5 @@ if __name__ == '__main__':
                     {'id': 594226727, 'state': 'CANCELED', 'date': '2018-09-12T21:27:25.241689'},
                     {'id': 615064591, 'state': 'CANCELED', 'date': '2018-10-14T08:21:33.419441'}]
     print(filter_by_state(list_of_dict))
+    print(sort_by_date(list_of_dict))
 
